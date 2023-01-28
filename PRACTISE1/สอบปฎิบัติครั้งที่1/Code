@@ -1,0 +1,56 @@
+//ชยธร เอียดราช รหัส  65543206049-0 sec2
+
+#include<stdio.h>
+#include<stdlib.h>
+typedef struct node{
+    int value;
+    struct node *link;
+}NODE;
+
+int main()
+{
+    NODE *p=NULL, *h=NULL;
+    int menu,num;
+    do{
+        printf("1: AddNode\n");
+        printf("2: UpdateNode\n");
+        printf("3: ShowAll\n");
+        printf("4: ShowBack\n");
+        printf("5: SwapNode\n");
+        printf("Enter Menu: "); scanf("%d",&menu);
+        if(menu==1){ //AddNode
+            p = (NODE *) malloc(sizeof(NODE));
+            printf("Enter value: "); scanf("%d",&p->value);
+            p->link=h;
+            h=p;
+        }
+        else if(menu==2){ //UpdateNode
+            printf("Update for: "); scanf("%d",&num);
+            p=h;
+            while(p != NULL && p->value != num){
+                p = p->link;
+            }
+            if(p==NULL) printf("data not found!!!\n");
+            else{
+                printf("Update to: "); scanf("%d",&p->value);
+                printf("Update Complete!!!\n");
+            }
+        }
+        else if(menu==3){ //ShowAll
+            p = h;
+            while(p!=NULL){
+                printf("%d\n",p->value);
+                p = p->link;
+            }
+        }
+        else if(menu==4){ //ShowBack
+          
+            }
+        }
+        else if(menu==5){ //SwapNode
+            
+        }
+        
+        
+    }while(menu!=6);
+}
